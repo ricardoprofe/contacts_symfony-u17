@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<div>
+    <h1 class="centered">Contacts App</h1>
+    <h2 class="centered">User list</h2>
+
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Surname</th>
+            <th>Email</th>
+            <th>Roles</th>
+        </tr>
+        {% for user in users %}
+            <tr>
+                <td>{{ user.name }}</td>
+                <td>{{ user.surname }}</td>
+                <td>{{ user.email }}</td>
+                <td>{{ user.roles|join(', ') }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+
+</div>
+{% endblock %}

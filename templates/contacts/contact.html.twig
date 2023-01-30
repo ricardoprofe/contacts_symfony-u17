@@ -1,0 +1,19 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+    <h1 class="centered">Contacts App</h1>
+
+    {%  if contact == null %}
+        <h2>Please, enter a contact Id</h2>
+    {%  else %}
+        <main class="contact">
+            {{ form(form) }}
+        </main>
+    {% endif %}
+    <p>
+        <a href="{{ path('contact_list') }}">Return to contact list</a>
+        <a href="{{ path('app_main_page') }}">Return to main page</a>
+    </p>
+
+{% endblock %}

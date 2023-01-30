@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+
+<main class="centered">
+    <h1>My Contacts App</h1>
+    <h2>Welcome to my Contacts App</h2>
+    {% if is_granted('ROLE_USER') %}
+        <p>You can see the full  <a href ="{{ path('contact_list')}}">list of contacts</a></p>
+        <p>Or try to search a contact by its name or surname:</p>
+        {{ form(form) }}
+    {% endif %}
+    {% if not is_granted('ROLE_USER') %}
+        <p>Please, <a href="{{ path('app_login') }}">login</a> or <a href="{{ path('app_register') }}"> register</a> </p>
+    {% endif %}
+</main>
+
+{% endblock %}
+

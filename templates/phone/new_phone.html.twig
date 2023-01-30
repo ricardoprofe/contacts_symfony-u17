@@ -1,0 +1,12 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1 class="centered">Contacts App</h1>
+    <h2>Add new phone: {{ contact.name }} {{ contact.surname }}</h2>
+    <main class="contact">
+        {{ form(form) }}
+    </main>
+    <p>
+        <a href="{{ path('single_contact', { id: contact.id }) }}">Return to contact {{ contact.name }} {{ contact.surname }} </a>
+    </p>
+{% endblock %}
